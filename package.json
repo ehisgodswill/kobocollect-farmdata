@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "dxf-writer": "^1.18.4",
+    "next": "16.1.6",
+    "node-fetch": "^3.3.2",
+    "proj4": "^2.20.2",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "xlsx-populate": "^1.21.0"
+  },
+  "devDependencies": {
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6"
+  }
+}
