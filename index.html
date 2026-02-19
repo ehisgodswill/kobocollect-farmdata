@@ -13,7 +13,24 @@
   </head>
 
   <body>
-    <div class="container">
+    <div id="loginBox" class="login-box">
+      <div class="login-con">
+        <h3 class="login-title">Kobo Login</h3>
+        <form id="loginForm" autocomplete="on">
+          <div class="form-group">
+            <label for="koboUser">Username</label>
+            <input id="koboUser" name="username" type="text" autocomplete="username" required />
+          </div>
+          <div class="form-group">
+            <label for="koboPass">Password</label>
+            <input id="koboPass" name="password" type="password" autocomplete="current-password" required />
+          </div>
+          <button id="loginBtn" type="submit" class="btn-primary"> Login </button>
+        </form>
+        <div id="loginStatus" class="login-status"></div>
+      </div>
+    </div>
+    <div class="container" id="mainBox">
       <h1>Farm Data Converter</h1>
       <p class="subtitle"> Upload XLSX → Download cleaned XLSX + AutoCAD DXF </p>
       <!-- Upload -->
@@ -38,6 +55,7 @@
       </div>
     </div>
     <script src="app.js"></script>
+    <script src="login.js"></script>
   </body>
 
 </html>

@@ -1,5 +1,5 @@
 
-const KOBO_TOKEN = "";
+let KOBO_TOKEN = null;
 
 let parsedFarmers = [];
 let generatedWorkbook = null;
