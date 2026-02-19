@@ -1,0 +1,14 @@
+{
+  "name": "farm-data",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "dxf-writer": "^1.18.4",
+    "node-fetch": "^3.3.2"
+  }
+}

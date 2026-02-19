@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/fontAwesome.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <title>Farm XLSX & DXF Tool</title>
+  </head>
+
+  <body>
+    <!-- Kobo Login -->
+    <div id="loginBox" class="login-box">
+      <h3 class="login-title">Kobo Login</h3>
+      <form id="loginForm" autocomplete="on">
+        <div class="form-group">
+          <label for="koboUser">Username</label>
+          <input id="koboUser" name="username" type="text" autocomplete="username" required />
+        </div>
+        <div class="form-group">
+          <label for="koboPass">Password</label>
+          <input id="koboPass" name="password" type="password" autocomplete="current-password" required />
+        </div>
+        <button id="loginBtn" type="submit" class="btn-primary">Login</button>
+      </form>
+      <div id="loginStatus" class="login-status"></div>
+    </div>
+    <hr />
+    <!-- XLSX Upload -->
+    <div id="uploadBox" class="upload-box" style="display:none;">
+      <div id="drop-area">
+        <div class="drop-icon"><i class="fa-light fa-file-upload"></i></div>
+        <div class="drop-text">Drag & drop XLSX file here <br /> or click to select</div>
+      </div>
+      <h3><i class="fa-light fa-files"></i> Uploaded Files</h3>
+      <div id="drop-files"></div>
+      <!-- Progress bar -->
+      <div id="progressContainer" style="display:none;">
+        <label>Processing:</label>
+        <progress id="progressBar" value="0" max="100"></progress>
+      </div>
+    </div>
+    <!-- Script libraries -->
+    <script src="/assets/xlsx-populate.min.js"></script>
+    <script src="/assets/proj4.min.js"></script>
+    <!-- Main frontend script -->
+    <script src="/assets/app.js" type="module"></script>
+  </body>
+
+</html>
