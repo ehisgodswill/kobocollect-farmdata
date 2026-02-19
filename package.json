@@ -1,4 +1,13 @@
 {
+  "name": "kobocollect-farmdata",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
   "dependencies": {
     "dxf-writer": "^1.18.4",
     "next": "16.1.6",
@@ -9,7 +18,6 @@
     "xlsx-populate": "^1.21.0"
   },
   "devDependencies": {
-    "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.6"
   }

@@ -2,7 +2,6 @@ import { useState } from "react";
 import XLSXPopulate from "xlsx-populate";
 import proj4 from "proj4";
 import { DxfWriter } from "dxf-writer";
-import "../pages/style.css";
 
 export default function Home () {
   const [files, setFiles] = useState([]);
