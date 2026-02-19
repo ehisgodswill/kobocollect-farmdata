@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "pages/**/*.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "env": {
+    "KOBO_USERNAME": "@kobo_username",
+    "KOBO_PASSWORD": "@kobo_password"
+  }
+}
