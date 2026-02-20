@@ -28,6 +28,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 14px;
 }
 
 /* --- Headings --- */
@@ -68,6 +69,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
   padding: 8px 12px;
   background: #f7f7f7;
   border-radius: 8px;
@@ -86,15 +88,16 @@ h2 {
   color: #e53935;
   cursor: pointer;
   font-size: 1rem;
-  transition: color 0.2s ease;
+  transition: all 0.3s ease;
+  margin: 0;
 }
 
 .file-list .remove-btn:hover {
   color: #b71c1c;
+  transform: scale(1.5);
 }
 
-/* --- Button --- */
-button {
+.button {
   padding: 12px 25px;
   background-color: #4caf50;
   border: none;
@@ -106,13 +109,13 @@ button {
   transition: all 0.3s ease;
 }
 
-button:hover {
+.button:hover {
   background-color: #45a049;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-button:disabled {
+.button:disabled {
   background-color: #434a44;
   cursor: not-allowed;
 }
