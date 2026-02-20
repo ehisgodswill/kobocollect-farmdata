@@ -1,12 +1,9 @@
-/* --- Basic Reset --- */
+/* --- Reset & Base --- */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-:root{
-  font-size: 30px;
 }
 
 body {
@@ -27,6 +24,10 @@ body {
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* --- Headings --- */
@@ -37,21 +38,7 @@ h2 {
   color: #333;
 }
 
-/* --- Upload Section --- */
-.upload-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* Drag-and-drop box */
-.upload-section input[type="file"] {
-  display: none;
-  /* hidden input */
-}
-
+/* --- Drag-and-drop box --- */
 .drop-area {
   border: 2px dashed #bbb;
   border-radius: 12px;
@@ -67,45 +54,6 @@ h2 {
   border-color: #4caf50;
   background: #f0fff0;
   color: #333;
-}
-
-/* Button styling */
-.upload-section button {
-  padding: 12px 25px;
-  background-color: #4caf50;
-  border: none;
-  border-radius: 12px;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.upload-section button:hover {
-  background-color: #45a049;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-.upload-section button:disabled {
-  background-color: #868686;
-  cursor: not-allowed;
-}
-
-/* Progress bar */
-.progress-bar {
-  width: 100%;
-  height: 14px;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #e0e0e0;
-  margin-top: 10px;
-}
-
-.progress-bar div {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, #4caf50, #81c784);
-  transition: width 0.3s ease;
 }
 
 /* --- File list --- */
@@ -132,7 +80,6 @@ h2 {
   background: #e8f5e9;
 }
 
-/* Remove button inside file list */
 .file-list .remove-btn {
   background: transparent;
   border: none;
@@ -146,17 +93,54 @@ h2 {
   color: #b71c1c;
 }
 
-/* Responsive */
+/* --- Button --- */
+button {
+  padding: 12px 25px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:disabled {
+  background-color: #434a44;
+  cursor: not-allowed;
+}
+
+/* --- Progress bar --- */
+.progress-bar {
+  width: 100%;
+  height: 14px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #e0e0e0;
+  margin-top: 10px;
+}
+
+.progress-bar div {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #4caf50, #81c784);
+  transition: width 0.3s ease;
+}
+
+/* --- Responsive --- */
 @media (max-width: 600px) {
   .container {
     padding: 20px;
   }
 
-  .upload-section {
-    gap: 15px;
-  }
-
-  .upload-section button {
+  button {
     width: 100%;
   }
 }
