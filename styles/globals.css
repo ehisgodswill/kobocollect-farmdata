@@ -1,139 +1,159 @@
-/* Basic Reset */
+/* --- Basic Reset --- */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+:root{
+  font-size: 30px;
 }
 
 body {
-  background: #f7f8fa;
+  background: #f4f6f8;
   color: #222;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  padding: 20px;
 }
 
-/* Container */
+/* --- Container --- */
 .container {
   max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
+  width: 100%;
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 30px 40px;
 }
 
-/* Headings */
+/* --- Headings --- */
 h2 {
   text-align: center;
+  font-size: 2rem;
   margin-bottom: 30px;
-  font-size: 1.8rem;
   color: #333;
 }
 
-/* Upload Section */
+/* --- Upload Section --- */
 .upload-section {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
+/* Drag-and-drop box */
 .upload-section input[type="file"] {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  font-size: 0.95rem;
+  display: none;
+  /* hidden input */
 }
 
+.drop-area {
+  border: 2px dashed #bbb;
+  border-radius: 12px;
+  padding: 50px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #fafafa;
+  color: #555;
+}
+
+.drop-area.dragover {
+  border-color: #4caf50;
+  background: #f0fff0;
+  color: #333;
+}
+
+/* Button styling */
 .upload-section button {
-  padding: 10px 20px;
+  padding: 12px 25px;
   background-color: #4caf50;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
-  width: fit-content;
+  transition: all 0.3s ease;
 }
 
 .upload-section button:hover {
   background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.upload-section button:disabled {
+  background-color: #868686;
+  cursor: not-allowed;
 }
 
-/* Progress Bar */
+/* Progress bar */
 .progress-bar {
   width: 100%;
-  height: 12px;
-  border-radius: 8px;
+  height: 14px;
+  border-radius: 12px;
   overflow: hidden;
   background: #e0e0e0;
+  margin-top: 10px;
 }
 
 .progress-bar div {
   height: 100%;
   width: 0%;
-  background: #4caf50;
+  background: linear-gradient(90deg, #4caf50, #81c784);
   transition: width 0.3s ease;
 }
 
-/* Login Box (if needed later) */
-.login-box {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 25px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+/* --- File list --- */
+.file-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.login-box h3 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 1.4rem;
-}
-
-.login-box label {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
-  font-size: 0.95rem;
-}
-
-.login-box input {
-  width: 100%;
-  padding: 8px 10px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.login-box button {
-  width: 100%;
-  padding: 10px;
-  background: #4caf50;
-  border: none;
+.file-list div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #f7f7f7;
   border-radius: 8px;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
+  font-size: 0.95rem;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.login-box button:hover {
-  background: #45a049;
+.file-list div:hover {
+  background: #e8f5e9;
+}
+
+/* Remove button inside file list */
+.file-list .remove-btn {
+  background: transparent;
+  border: none;
+  color: #e53935;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.file-list .remove-btn:hover {
+  color: #b71c1c;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
   .container {
-    margin: 20px;
-    padding: 15px;
+    padding: 20px;
   }
 
   .upload-section {
-    gap: 10px;
+    gap: 15px;
   }
 
   .upload-section button {
