@@ -46,14 +46,15 @@ export default function Home () {
   function simulateProgress (time) {
     setProgress(5);
     const iv = setInterval(() => {
-      setProgress(p => { if (p >= 90) { clearInterval(iv); return p; } return p + Math.random() * 150 / time; });
+      setProgress(p => { if (p >= 90) { clearInterval(iv); return p; } return Math.round( p + Math.random() * 7); });
     }, 300);
   }
 
-  async function downloadFile (ids, type) {
+  async function downloadDxf (ids) {
     try {
-      setDownloading(true); simulateProgress(ids.length);
-      const res = await fetch(`/api/process-${type}`, {
+      setDownloading(true);
+      simulateProgress(ids.length);
+      const res = await fetch(`/api/process-dxf`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ assetUid: selectedForm?.uid, ids }),
@@ -61,7 +62,7 @@ export default function Home () {
       if (!res.ok) throw new Error("fail");
       const blob = await res.blob(), url = URL.createObjectURL(blob);
       const a = document.createElement("a");
-      a.href = url; a.download = `kobo_export.${type}`; a.click();
+      a.href = url; a.download = `kobo_export.dxf`; a.click();
       URL.revokeObjectURL(url); setProgress(100);
     } catch (e) { console.error(e); alert("Download failed"); }
     finally { setTimeout(() => { setDownloading(false); setProgress(0); }, 900); }
@@ -142,7 +143,7 @@ export default function Home () {
             </svg>
           </div>
           <div>
-            <h1 className="app-header__title">Kobo Processor</h1>
+            <h1 className="app-header__title">Kobo Form Processor</h1>
             <p className="app-header__sub">Farm survey data · KoboToolbox integration</p>
           </div>
         </header>
@@ -207,7 +208,7 @@ export default function Home () {
           <SubmissionList
             submissions={submissions}
             onDownloadXlsx={downloadXlsx}
-            onDownloadDxf={ids => downloadFile(ids, "dxf")}
+            onDownloadDxf={downloadDxf}
           />
         )}
 

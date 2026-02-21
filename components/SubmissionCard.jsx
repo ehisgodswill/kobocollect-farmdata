@@ -9,7 +9,8 @@ const SKIP_KEYS = new Set([
   "_attachments", "FarmBoundary", "__version__", "meta/instanceID",
   "meta/rootUuid", "_uuid", "_xform_id_string", "formhub/uuid",
   "_geolocation", "_tags", "_notes", "_validation_status",
-  "_id", "start", "end", "today"
+  "_id", "start", "end", "today",
+  "_status", "_submission_time", "Farmers_Picture", "Density_Picture", "_submitted_by"
 ]);
 
 

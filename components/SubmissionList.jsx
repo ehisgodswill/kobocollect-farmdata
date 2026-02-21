@@ -50,6 +50,7 @@ function SubmissionList ({ submissions, onDownloadXlsx, onDownloadDxf }) {
       groups[d].sort((a, b) => {
         if (sortBy === "name") return (a.Name || "").localeCompare(b.Name || "");
         if (sortBy === "area") return parseFloat(b.Total_Area_Ha || 0) - parseFloat(a.Total_Area_Ha || 0);
+        if (sortBy === "collector") return parseInt(a.Collector_Id || 0) - parseInt(b.Collector_Id || 0);
         // default: by end time descending
         return new Date(b.end || b._submission_time) - new Date(a.end || a._submission_time);
       });
@@ -89,6 +90,7 @@ function SubmissionList ({ submissions, onDownloadXlsx, onDownloadDxf }) {
           <option value="date-asc">Date: Oldest</option>
           <option value="name">Name A–Z</option>
           <option value="area">Area: Largest</option>
+          <option value="collector">Collator Id</option>
         </select>
 
         <button className="btn btn--ghost" onClick={toggleAll}>
