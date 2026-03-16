@@ -1,5 +1,6 @@
 export default async function handler (req, res) {
   try {
+    const limit = 200;
     const { assetUid, page = 1 } = req.query;
     const KOBO_TOKEN = process.env.KOBO_TOKEN;
 
@@ -9,7 +10,7 @@ export default async function handler (req, res) {
 
     const url =
       `https://kf.kobotoolbox.org/api/v2/assets/${assetUid}/data/` +
-      `?format=json&page=${page}&page_size=100`;
+      `?format=json&limit=${limit}&start=${(page - 1) * limit}`;
 
     const r = await fetch(url, {
       headers: {
